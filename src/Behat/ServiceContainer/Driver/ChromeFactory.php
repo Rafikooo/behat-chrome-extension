@@ -28,6 +28,7 @@ final class ChromeFactory implements DriverFactory
                 ->values(['allow', 'default', 'deny'])->defaultValue('default')->end()
             ->scalarNode('download_path')->defaultValue('/tmp')->end()
             ->integerNode('socket_timeout')->defaultValue(10)->end()
+            ->integerNode('dom_wait_timeout')->defaultValue(3000)->end()
             ->end();
     }
 
@@ -38,6 +39,7 @@ final class ChromeFactory implements DriverFactory
     {
         $validateCert = isset($config['validate_certificate']) ? $config['validate_certificate'] : true;
         $socketTimeout = $config['socket_timeout'];
+        $domWaitTimeout = $config['dom_wait_timeout'];
         $downloadBehavior = $config['download_behavior'];
         $downloadPath = $config['download_path'];
         return new Definition(ChromeDriver::class, [
@@ -47,6 +49,7 @@ final class ChromeFactory implements DriverFactory
             [
                 'validateCertificate' => $validateCert,
                 'socketTimeout' => $socketTimeout,
+                'domWaitTimeout' => $domWaitTimeout,
                 'downloadBehavior' => $downloadBehavior,
                 'downloadPath' => $downloadPath,
             ]
