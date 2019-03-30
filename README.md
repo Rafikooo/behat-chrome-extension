@@ -74,6 +74,12 @@ Default: falls back to browser configuration
 
 Set to 'allow' to allow downloads.
 
+### dom_wait_timeout
+
+Default: 3000
+
+How many milliseconds we should wait for DOM to be ready after each action/transition
+
 ### download_path
 
 Default: /tmp
