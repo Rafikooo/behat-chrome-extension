@@ -19,7 +19,7 @@
     "require": {
         "php": ">=7.1",
         "behat/behat": "^3.0.4",
-        "behat/mink-extension": "^2.0",
+        "friends-of-behat/mink-extension": "^2.0",
         "dmore/chrome-mink-driver": "^2.4.1"
     },
     "require-dev": {
