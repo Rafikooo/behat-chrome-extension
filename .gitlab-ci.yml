@@ -18,12 +18,12 @@ stages:
       - .cache
       - vendor
 
-GrumPHP:
+grumphp:
   image: composer
   stage: lint
   tags: [docker]
   script:
-    - composer require phpro/grumphp ergebnis/composer-normalize enlightn/security-checker --prefer-dist --ansi --no-progress --sort-packages
+    - composer require phpro/grumphp-shim ergebnis/composer-normalize enlightn/security-checker squizlabs/php_codesniffer -o --ansi --no-progress
     - vendor/bin/grumphp run -n
 
 test 7.4:

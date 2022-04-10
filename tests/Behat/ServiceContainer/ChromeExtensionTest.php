@@ -1,4 +1,5 @@
 <?php
+
 namespace tests\Behat\ServiceContainer;
 
 use Behat\MinkExtension\ServiceContainer\MinkExtension;
@@ -12,7 +13,7 @@ class ChromeExtensionTest extends TestCase
     /** @var ChromeExtension */
     private $extension;
 
-    public function setUp() : void
+    public function setUp(): void
     {
         $this->extension = new ChromeExtension();
     }
