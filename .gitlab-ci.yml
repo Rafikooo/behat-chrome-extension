@@ -2,6 +2,7 @@ variables:
   COMPOSER_CACHE_DIR: ".cache/composer"
 
 stages:
+  - lint
   - test
 
 .test_template: &test_template
@@ -16,6 +17,14 @@ stages:
     paths:
       - .cache
       - vendor
+
+GrumPHP:
+  image: composer
+  stage: lint
+  tags: [docker]
+  script:
+    - composer require phpro/grumphp ergebnis/composer-normalize enlightn/security-checker --prefer-dist --ansi --no-progress --sort-packages
+    - vendor/bin/grumphp run -n
 
 test 7.4:
   <<: *test_template
