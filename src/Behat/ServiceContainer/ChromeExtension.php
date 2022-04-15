@@ -1,4 +1,5 @@
 <?php
+
 namespace DMore\ChromeExtension\Behat\ServiceContainer;
 
 use Behat\MinkExtension\ServiceContainer\MinkExtension;
@@ -23,7 +24,7 @@ class ChromeExtension implements ExtensionInterface
     public function initialize(ExtensionManager $extensionManager)
     {
         if (null !== $minkExtension = $extensionManager->getExtension('mink')) {
-            /** @var $minkExtension MinkExtension */
+            /* @var $minkExtension MinkExtension */
             $minkExtension->registerDriverFactory(new Driver\ChromeFactory());
         }
     }

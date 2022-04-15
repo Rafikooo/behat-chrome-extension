@@ -1,4 +1,5 @@
 <?php
+
 namespace DMore\ChromeExtension\Behat\ServiceContainer\Driver;
 
 use Behat\MinkExtension\ServiceContainer\Driver\DriverFactory;
@@ -25,7 +26,7 @@ final class ChromeFactory implements DriverFactory
             ->scalarNode('api_url')->end()
             ->booleanNode('validate_certificate')->defaultTrue()->end()
             ->enumNode('download_behavior')
-                ->values(['allow', 'default', 'deny'])->defaultValue('default')->end()
+            ->values(['allow', 'default', 'deny'])->defaultValue('default')->end()
             ->scalarNode('download_path')->defaultValue('/tmp')->end()
             ->integerNode('socket_timeout')->defaultValue(10)->end()
             ->integerNode('dom_wait_timeout')->defaultValue(3000)->end()
@@ -42,7 +43,9 @@ final class ChromeFactory implements DriverFactory
         $domWaitTimeout = $config['dom_wait_timeout'];
         $downloadBehavior = $config['download_behavior'];
         $downloadPath = $config['download_path'];
-        return new Definition(ChromeDriver::class, [
+        return new Definition(
+            ChromeDriver::class,
+            [
             $this->resolveApiUrl($config['api_url']),
             null,
             '%mink.base_url%',
@@ -53,7 +56,8 @@ final class ChromeFactory implements DriverFactory
                 'downloadBehavior' => $downloadBehavior,
                 'downloadPath' => $downloadPath,
             ]
-        ]);
+            ]
+        );
     }
 
     /**
