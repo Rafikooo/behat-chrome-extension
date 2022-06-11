@@ -1,5 +1,6 @@
-Chrome Behat Extension
-======================
+# Behat Chrome Extension
+
+[![Latest Stable Version](http://poser.pugx.org/dmore/behat-chrome-extension/v)](https://packagist.org/packages/dmore/behat-chrome-extension) [![Total Downloads](http://poser.pugx.org/dmore/behat-chrome-extension/downloads)](https://packagist.org/packages/dmore/behat-chrome-extension) [![Latest Unstable Version](http://poser.pugx.org/dmore/behat-chrome-extension/v/unstable)](https://packagist.org/packages/dmore/behat-chrome-extension) [![License](http://poser.pugx.org/dmore/behat-chrome-extension/license)](https://packagist.org/packages/dmore/behat-chrome-extension) [![PHP Version Require](http://poser.pugx.org/dmore/behat-chrome-extension/require/php)](https://packagist.org/packages/dmore/behat-chrome-extension)
 
 Behat extension for controlling chrome without the overhead of selenium.
 
